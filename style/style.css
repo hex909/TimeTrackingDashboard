@@ -1,0 +1,232 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background-color: #0f1424;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.container {
+  width: 900px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (230px)[2];
+      grid-template-rows: repeat(2, 230px);
+  gap: 20px;
+}
+
+.container .userInfo {
+  grid-row: span 2;
+  background-color: #1c1f4a;
+  border-radius: 15px;
+}
+
+.container .userInfo .user {
+  padding: 1rem;
+  background-color: #5847eb;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+}
+
+.container .userInfo .user .imgCon {
+  background-color: white;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 4px solid white;
+  width: 80px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.container .userInfo .user .imgCon img {
+  width: 100%;
+}
+
+.container .userInfo .user .info .reportFor {
+  color: #7f88e6;
+  font-size: 1rem;
+  margin-bottom: .51rem;
+}
+
+.container .userInfo .user .info .userName {
+  color: white;
+  font-size: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.container .userInfo .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 1rem;
+  gap: 1rem;
+  padding-bottom: .5rem;
+}
+
+.container .userInfo .details a {
+  text-decoration: none;
+  color: #7f88e6;
+  font-weight: 500;
+  -webkit-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
+}
+
+.container .userInfo .details a.active {
+  color: white;
+}
+
+.container .userInfo .details a:hover {
+  color: white;
+}
+
+.container .cards {
+  border-radius: 15px;
+  padding-top: 2.3rem;
+  background-color: #ff8c66;
+  border-radius: 15px;
+  background-image: url("/images/icon-work.svg");
+  background-repeat: no-repeat;
+  background-position: 90% -3%;
+  background-size: 30%;
+  overflow: hidden;
+}
+
+.container .cards .card {
+  border-radius: 15px 15px 0 0;
+  background-color: #1c1f4a;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  color: white;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+}
+
+.container .cards .card .cardTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.7rem;
+}
+
+.container .cards .card .cardTop svg {
+  cursor: pointer;
+}
+
+.container .cards .card .cardTop svg:hover path {
+  padding: 1rem;
+  fill: white;
+}
+
+.container .cards .card:hover {
+  background-color: #3a4198;
+}
+
+.container .cards .card .timeDisplayContainer .currentHours {
+  font-weight: 300;
+  font-size: 2.9rem;
+  margin-bottom: 1rem;
+}
+
+.container .cards .card .timeDisplayContainer .timeframes {
+  color: #7f88e6;
+  font-size: .8rem;
+}
+
+.container .play {
+  background-color: #56c2e6;
+  background-image: url("/images/icon-play.svg");
+}
+
+.container .study {
+  background-color: #ff5c7c;
+  background-image: url("/images/icon-study.svg");
+}
+
+.container .exercise {
+  background-color: #4acf81;
+  background-image: url("/images/icon-exercise.svg");
+}
+
+.container .social {
+  background-color: #7536d3;
+  background-image: url("/images/icon-social.svg");
+}
+
+.container .selfcare {
+  background-color: #f1c65b;
+  background-image: url("/images/icon-self-care.svg");
+}
+
+@media screen and (max-width: 950px) {
+  .container {
+    max-width: 430px;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+  .container .userInfo .user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .container .userInfo .details {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding-bottom: 1rem;
+  }
+  .container .cards .card .timeDisplayContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+/*# sourceMappingURL=style.css.map */
