@@ -38,13 +38,14 @@ body {
             margin-bottom: 1.5rem;
 
             .imgCon {
-                background-color: $highLightTextColor;
+                background-color: hsl(246, 59%, 71%);
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 border: 4px solid $highLightTextColor;
                 width: 80px;
+                height: 80px;
                 margin-top: 1rem;
                 margin-bottom: 2rem;
                 img {
@@ -186,6 +187,7 @@ body {
 
                 .imgCon {
                     margin-right: 1rem;
+
                 }
 
                 .info{
@@ -209,6 +211,10 @@ body {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+
+                    .currentHours {
+                        font-size: clamp(2.5rem, 5vw, 3rem) ;
+                    }
                 }
             }
         }
