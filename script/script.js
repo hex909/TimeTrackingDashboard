@@ -3,6 +3,8 @@ if (!localStorage.getItem('data')) {
 }
 
 let jsonData
+let index = 0;
+
 
 
 const cards = document.querySelectorAll('.cards')
@@ -13,10 +15,10 @@ const monthlyBtn = document.querySelector('.monthly')
 
 switch (localStorage.getItem('data')) {
     case 'daily':
+        data('daily')
         document.querySelector('.monthly').classList.remove('active')
         document.querySelector('.weekly').classList.remove('active')
         document.querySelector('.daily').classList.add('active')
-        data('daily')
         break;
 
     case 'weekly':
@@ -35,24 +37,26 @@ switch (localStorage.getItem('data')) {
     break;
 }
 
-const btns = document.querySelectorAll('.btn')
-
-let index = 0;
 
 async function data(type) {
     if (!jsonData) {
         let fetchdata = await fetch('./../data.json');
         jsonData = await fetchdata.json()
     }
+    console.log(type);
 
     for (let i of cards) {
         i.querySelector('.currentHours').textContent = `${jsonData[index].timeframes[type].current}hrs`
         if (type === 'daily'){
+            localStorage.setItem('data', 'daily')
             i.querySelector('.previous').textContent =  `Day - ${jsonData[index].timeframes[type].previous}hrs`
         }else if (type === 'weekly') {
             i.querySelector('.previous').textContent =  `Week - ${jsonData[index].timeframes[type].previous}hrs`
+            localStorage.setItem('data', 'weekly')
         }else {
             i.querySelector('.previous').textContent =  `Month - ${jsonData[index].timeframes[type].previous}hrs`
+            localStorage.setItem('data', 'monthly')
+            console.log('monthly');
         }
         index++
     }
@@ -91,8 +95,3 @@ monthlyBtn.addEventListener('click', (e) => {
 
     }
 })
-
-
-
-
-data('monthly')
