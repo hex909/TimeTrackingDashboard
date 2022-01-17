@@ -190,6 +190,8 @@ body {
 
 @media screen and (max-width: 950px) {
   .container {
+    min-width: 230px;
+    width: 100%;
     max-width: 430px;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -206,6 +208,12 @@ body {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+  }
+  .container .userInfo .user .imgCon {
+    margin-right: 1rem;
+  }
+  .container .userInfo .user .info .userName {
+    font-size: clamp(1.2rem, 5vw, 2rem);
   }
   .container .userInfo .details {
     -webkit-box-orient: horizontal;

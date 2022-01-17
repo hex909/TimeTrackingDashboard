@@ -172,6 +172,8 @@ body {
 
 @media screen and (max-width:950px){
     .container {
+        min-width: 230px;
+        width: 100%;
         max-width: 430px;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
@@ -181,6 +183,16 @@ body {
                 display: flex;
                 align-items: center;
                 justify-content: space-evenly;
+
+                .imgCon {
+                    margin-right: 1rem;
+                }
+
+                .info{
+                    .userName{
+                        font-size: clamp(1.2rem, 5vw, 2rem);
+                    }
+                }
             }
             
             .details {
